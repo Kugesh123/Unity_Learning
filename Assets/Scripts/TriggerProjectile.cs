@@ -9,10 +9,7 @@ public class TriggerProjectile : MonoBehaviour
 
     void Start()
     {
-        projectile_1.SetActive(false);
-        projectile_2.SetActive(false);
-        projectile_3.SetActive(false);
-        projectile_4.SetActive(false);
+        
     }
 
     void OnTriggerEnter(Collider other)
@@ -23,6 +20,8 @@ public class TriggerProjectile : MonoBehaviour
             projectile_2.SetActive(true);
             projectile_3.SetActive(true);
             projectile_4.SetActive(true);
+
+            Destroy(gameObject);
         }
     }
 }
