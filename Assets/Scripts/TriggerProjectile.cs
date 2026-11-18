@@ -7,11 +7,6 @@ public class TriggerProjectile : MonoBehaviour
     [SerializeField] GameObject projectile_3;
     [SerializeField] GameObject projectile_4;
 
-    void Start()
-    {
-        
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
