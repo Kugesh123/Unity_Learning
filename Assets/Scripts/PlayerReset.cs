@@ -1,0 +1,13 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class PlayerReset : MonoBehaviour
+{
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+}
