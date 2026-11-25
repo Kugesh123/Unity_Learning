@@ -3,15 +3,26 @@ using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] InputAction movement;
+    Rigidbody rb;
+    [SerializeField] float speed = 10f;
+
+    private void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        movement.Enable();
+    }
+
+    private void FixedUpdate()
+    {
+        if (movement.IsPressed())
+        {
+            //Debug.Log("Movement input is pressed.");
+            rb.AddRelativeForce(Vector3.up * speed * Time.fixedDeltaTime);
+        }
     }
 }
