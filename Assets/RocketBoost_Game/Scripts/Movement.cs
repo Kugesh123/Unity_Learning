@@ -21,7 +21,6 @@ public class Movement : MonoBehaviour
     {
         if (movement.IsPressed())
         {
-            //Debug.Log("Movement input is pressed.");
             rb.AddRelativeForce(Vector3.up * speed * Time.fixedDeltaTime);
         }
     }
